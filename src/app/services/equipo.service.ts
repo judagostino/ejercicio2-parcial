@@ -22,7 +22,7 @@ resourceUrl: string;
   }
 
   post(obj:Equipo){
-    return this.httpCliente.get(this.resourceUrl,obj);
+    return this.httpCliente.post(this.resourceUrl,obj);
   }
 
 }
