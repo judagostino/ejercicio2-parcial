@@ -57,6 +57,12 @@ Grabar(){
   
   });
 }
+Eliminar(item){
+  this.equiposServices.delete(item).subscribe((res:any)=>{
+    this.getEquipo();
+    this.Volver();
+  })
+}
 Volver() {
     this.EstadoForm = "L";
   };
