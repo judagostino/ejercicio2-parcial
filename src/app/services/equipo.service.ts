@@ -3,7 +3,7 @@ import{ HttpClient,
   HttpHeaders,
   HttpErrorResponse,
   HttpParams} from '@angular/common/http';
-import {of} from 'rxjs';
+import {of, Observable} from 'rxjs';
 import {Equipo} from '../models/equipos';
 
 @Injectable({
@@ -25,8 +25,8 @@ resourceUrl: string;
     return this.httpCliente.post(this.resourceUrl,obj);
   }
 
-   delete(Id) {
-    return this.httpCliente.delete(this.resourceUrl + Id);
+   delete(id) {
+    return this.httpCliente.delete(this.resourceUrl + id);
   }
 
 }

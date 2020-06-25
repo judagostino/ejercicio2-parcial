@@ -57,10 +57,12 @@ Grabar(){
   
   });
 }
-Eliminar(item){
-  this.equiposServices.delete(item).subscribe((res:any)=>{
-    this.getEquipo();
+Eliminar(id){
+  this.equiposServices.delete(id).subscribe((res:string) =>{
     this.Volver();
+    this.getEquipo();
+    window.alert("Equipo Eliminado")
+    
   })
 }
 Volver() {
