@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{EquipoService} from '../../services/equipo.service';
-import {Equipo} from '../../models/equipo';
+import {Equipo} from '../../models/equipos';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalDialogService } from "../../services/modal-dialog.service";
 
@@ -31,7 +31,8 @@ submitted = false;
   }
 
 getEquipo(){
-  this.equiposServices.get().subscribe((res:Equipo[])=>{
+  this.equiposServices.get()
+  .subscribe((res:Equipo[])=>{
     this.Items = res;
   });
 }
@@ -45,10 +46,10 @@ Agregar(){
 Grabar(){
   this.submitted = true;
   if(this.FormReg.invalid){
-    window.alert("Verifique los datos");
+   
     return;
   }
-  const itemCopy = {...this.FormReg.value};
+  const itemCopy = { ...this.FormReg.value };
   itemCopy.IdEquipo = 0;
   this.equiposServices.post(itemCopy).subscribe((res:any)=>{
     this.getEquipo();

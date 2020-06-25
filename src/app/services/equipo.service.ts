@@ -4,7 +4,7 @@ import{ HttpClient,
   HttpErrorResponse,
   HttpParams} from '@angular/common/http';
 import {of} from 'rxjs';
-import {Equipo} from '../models/equipo';
+import {Equipo} from '../models/equipos';
 
 @Injectable({
 providedIn:'root'
@@ -19,6 +19,10 @@ resourceUrl: string;
 
   get(){
     return this.httpCliente.get(this.resourceUrl);
+  }
+
+  post(obj:Equipo){
+    return this.httpCliente.get(this.resourceUrl,obj);
   }
 
 }
