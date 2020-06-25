@@ -57,8 +57,8 @@ Grabar(){
   
   });
 }
-Eliminar(id){
-  this.equiposServices.delete(id).subscribe((res:string) =>{
+Eliminar(IdEquipo){
+  this.equiposServices.delete(IdEquipo).subscribe((res:string) =>{
     this.Volver();
     this.getEquipo();
     window.alert("Equipo Eliminado")
